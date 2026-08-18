@@ -32,7 +32,7 @@ export const rooms = [
     beds: '1 King bed',
     guests: 2,
     desc: 'A private terrace, warm natural materials and a quiet highland setting.',
-    img: '/images/room-terrace.svg',
+    img: '/images/lodge-exterior.webp',
     amenities: ['Private terrace', 'King bed', 'Wi-Fi'],
   },
   {
@@ -43,7 +43,7 @@ export const rooms = [
     beds: '1 King bed + sofa',
     guests: 3,
     desc: 'A generous suite designed for longer stays, with space to slow down and take in the landscape.',
-    img: '/images/room-suite.svg',
+    img: '/images/room-luxury.webp',
     amenities: ['Highland views', 'Soaking tub', 'King bed'],
   },
   {
@@ -54,7 +54,7 @@ export const rooms = [
     beds: '2 beds',
     guests: 4,
     desc: 'A spacious option for families or small groups, opening onto a private terrace.',
-    img: '/images/room-family.svg',
+    img: '/images/breakfast.webp',
     amenities: ['2-room layout', 'Private terrace', 'Up to 4 guests'],
   },
   {
@@ -65,7 +65,7 @@ export const rooms = [
     beds: '1 Queen bed',
     guests: 2,
     desc: 'A compact, characterful room for couples or solo travellers looking for a peaceful base.',
-    img: '/images/room-loft.svg',
+    img: '/images/coffee-estate.webp',
     amenities: ['Loft layout', 'Queen bed', 'Wi-Fi'],
   },
 ]

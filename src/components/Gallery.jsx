@@ -4,11 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react'
 
 const images = [
-  { src:'/images/hero-highlands.svg', alt:'Mbeya highlands', label:'The Highlands', span:'row-span-2' },
-  { src:'/images/room-loft.svg', alt:'Cabin interior', label:'Interiors' },
-  { src:'/images/coffee-country.svg', alt:'Coffee estate', label:'Coffee Country' },
-  { src:'/images/room-suite.svg', alt:'Suite interior', label:'Suites', span:'row-span-2' },
-  { src:'/images/terrace.svg', alt:'Terrace farms', label:'Around the lodge', span:'col-span-2' },
+  { src:'/images/mbeya-landscape.webp', alt:'Mbeya highlands', label:'The Highlands', span:'row-span-2' },
+  { src:'/images/lodge-exterior.webp', alt:'Lodge exterior', label:'The Lodge' },
+  { src:'/images/room-luxury.webp', alt:'Luxury lodge room', label:'Interiors' },
+  { src:'/images/coffee-estate.webp', alt:'Coffee estate', label:'Coffee Country', span:'row-span-2' },
+  { src:'/images/dining-view.webp', alt:'Dining with a view', label:'Dining', span:'col-span-2' },
+  { src:'/images/pool-view.webp', alt:'Mountain lodge pool', label:'Slow Afternoons' },
+  { src:'/images/breakfast.webp', alt:'Breakfast with a view', label:'Breakfast' },
 ]
 export default function Gallery(){
   const { t } = useLanguage()

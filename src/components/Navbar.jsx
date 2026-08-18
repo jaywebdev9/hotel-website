@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Menu, X, Phone } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
 import { siteConfig } from '../config'
 import { useLanguage } from '../i18n'
 import { scrollToSection } from '../utils/navigation'
@@ -15,6 +15,8 @@ export default function Navbar({ onBook }) {
   const { language, setLanguage, languages, t } = useLanguage()
   const [solid, setSolid] = useState(false)
   const [open, setOpen] = useState(false)
+  const { scrollYProgress } = useScroll()
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 })
 
   useEffect(() => {
     const onScroll = () => setSolid(window.scrollY > 24)
@@ -38,6 +40,8 @@ export default function Navbar({ onBook }) {
   }
 
   return (
+    <>
+    <motion.div aria-hidden="true" className="scroll-progress" style={{ scaleX: progress }} />
     <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${solid || open ? 'bg-forest-950/96 backdrop-blur-xl shadow-lg shadow-black/15 border-b border-white/10' : 'bg-forest-950/70 backdrop-blur-md border-b border-white/5'}`}>
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="min-h-[76px] flex items-center gap-3 lg:gap-5">
@@ -80,5 +84,6 @@ export default function Navbar({ onBook }) {
         </AnimatePresence>
       </div>
     </nav>
+    </>
   )
 }

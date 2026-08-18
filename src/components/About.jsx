@@ -45,12 +45,12 @@ export default function About() {
           className="grid grid-cols-2 gap-4"
         >
           <img
-            src="/images/terrace.svg"
+            src="/images/lodge-exterior.webp"
             className="rounded-2xl w-full h-64 object-cover mt-10"
             alt="Highland terrace"
           />
           <img
-            src="/images/coffee-country.svg"
+            src="/images/coffee-estate.webp"
             className="rounded-2xl w-full h-64 object-cover"
             alt="Coffee estate"
           />
