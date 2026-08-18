@@ -49,20 +49,29 @@ export default function Hero({ onBook }) {
         <button onClick={() => scrollToSection('booking')} className="absolute bottom-7 right-10 lg:right-14 z-20 w-12 h-12 rounded-full border border-white/25 bg-black/15 backdrop-blur flex items-center justify-center text-white/85 hover:border-[#d6ad4b] hover:text-[#d6ad4b] transition" aria-label="Scroll to booking">↓</button>
       </div>
 
-      {/* Mobile: show the complete landscape photograph at its natural aspect ratio.
-          The copy sits below it instead of forcing a landscape image to cover a portrait screen. */}
-      <div className="md:hidden">
-        <div className="relative w-full aspect-[16/9] overflow-hidden bg-[#17130f]" aria-label="Loleza Ridge Lodge photography slideshow">
+      {/* Mobile: the photography is the hero background, not a separate image block.
+          The complete hero becomes one visual canvas and the copy sits over the image. */}
+      <div className="md:hidden relative min-h-[100svh] overflow-hidden bg-[#111812]">
+        <div className="absolute inset-0" aria-label="Loleza Ridge Lodge photography slideshow">
           {slides.map((slide, index) => (
-            <img key={slide.src} src={slide.src} alt={slide.alt} className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-[1400ms] ease-in-out ${index === activeSlide ? 'opacity-100' : 'opacity-0'}`} />
+            <picture key={slide.src}>
+              <source media="(max-width: 767px)" srcSet={slide.mobile} />
+              <img
+                src={slide.src}
+                alt={slide.alt}
+                className={`hero-img absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out ${index === activeSlide ? 'opacity-100' : 'opacity-0'}`}
+              />
+            </picture>
           ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10" />
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">{controls}</div>
+          <div className="hero-overlay absolute inset-0" />
+          <div className="absolute inset-x-0 bottom-0 h-[62%] bg-gradient-to-t from-[#080906]/90 via-[#080906]/45 to-transparent" />
         </div>
 
-        <div className="relative px-6 pt-9 pb-10 bg-[#111812]">
+        <div className="relative z-10 min-h-[100svh] px-6 pt-28 pb-28 flex items-end">
           <HeroCopy onBook={onBook} t={t} mobile />
         </div>
+
+        <div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-20">{controls}</div>
       </div>
     </section>
   )
