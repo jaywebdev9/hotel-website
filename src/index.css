@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: #f0ead6;
+  color: #1b1b16;
+}
+
+.font-display {
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
+}
+
+/* Terrace divider -- signature element echoing Mbeya's terraced highland farms */
+.terrace {
+  position: relative;
+  height: 64px;
+  overflow: hidden;
+}
+.terrace svg {
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* hero image — object-cover fills the viewport on any screen size with no gaps or tiling;
+   the zoom effect is done with transform (not background-size) so it can never duplicate */
+.hero-img {
+  animation: kenburns 22s ease-in-out infinite alternate;
+  transform-origin: center center;
+  will-change: transform;
+}
+@keyframes kenburns {
+  0% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nav-solid {
+  background: rgba(20, 32, 25, 0.96);
+  backdrop-filter: blur(6px);
+}
+
+.room-card img {
+  transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.room-card:hover img {
+  transform: scale(1.08);
+}
+.room-card .price-tag {
+  transition: transform 0.4s ease;
+}
+.room-card:hover .price-tag {
+  transform: translateY(-4px);
+}
+
+.exp-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.exp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px -18px rgba(20, 32, 25, 0.35);
+  border-color: #c9a227;
+}
+
+.gal-item {
+  overflow: hidden;
+}
+.gal-item img {
+  transition: transform 0.7s ease;
+}
+.gal-item:hover img {
+  transform: scale(1.1);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #33473a;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.dot.active {
+  width: 24px;
+  background: #c9a227;
+}
+
+.float-wa {
+  animation: pulse-wa 2.6s ease-in-out infinite;
+}
+@keyframes pulse-wa {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+::selection {
+  background: #c9a227;
+  color: #142019;
+}
+
+.eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .3em; text-transform: uppercase; margin-bottom: 1rem; }
+.field-label { display:flex; align-items:center; gap:.45rem; font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; color:rgba(27,27,22,.55); margin-bottom:.5rem; }
+.field-label.dark { color:rgba(240,234,214,.5); }
+.field-label svg { width:15px; height:15px; }
+.field, .widget-field { width:100%; border:1px solid rgba(27,27,22,.12); background:rgba(255,255,255,.35); border-radius:.85rem; padding:.85rem 1rem; outline:none; color:#1b1b16; font-size:.9rem; transition:border-color .2s, box-shadow .2s; }
+.field:focus { border-color:#c9a227; box-shadow:0 0 0 3px rgba(201,162,39,.12); }
+.widget-field { border-color:rgba(240,234,214,.1); background:rgba(255,255,255,.04); color:rgba(240,234,214,.7); }
+.footer-title { font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.25em; color:#dabb55; margin-bottom:1.1rem; }
+.social { width:38px;height:38px;border:1px solid rgba(240,234,214,.12);border-radius:999px;display:flex;align-items:center;justify-content:center;transition:.2s; }
+.social:hover { background:#c9a227;color:#142019; }
+.social svg { width:17px;height:17px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: #dabb55; color: #142019; }
+
+.widget-control {
+  display: block;
+  border: 1px solid rgba(240,234,214,.10);
+  background: rgba(255,255,255,.035);
+  border-radius: 1rem;
+  padding: .7rem .9rem .75rem;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+.widget-control:hover { border-color: rgba(218,187,85,.35); background: rgba(255,255,255,.055); }
+.widget-control:focus-within { border-color: rgba(218,187,85,.7); box-shadow: 0 0 0 3px rgba(201,162,39,.08); }
+.widget-control span { display:flex; align-items:center; gap:.45rem; color:rgba(240,234,214,.48); font-size:.62rem; text-transform:uppercase; letter-spacing:.13em; }
+.widget-control svg { width:14px; height:14px; }
+.widget-control input, .widget-control select { width:100%; margin-top:.35rem; border:0; outline:0; background:transparent; color:rgba(240,234,214,.9); font:500 .88rem Manrope,sans-serif; }
+.widget-control input::-webkit-calendar-picker-indicator { filter: invert(1); opacity:.45; }
+.widget-control option { color:#1b1b16; }
+
+.gal-item { position:relative; overflow:hidden; }
+.gal-item img { transition: transform .8s cubic-bezier(.2,.8,.2,1); }
+.gal-item:hover img { transform:scale(1.055); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* Phase 2 visual QA polish */
+:focus-visible {
+  outline: 2px solid #dabb55;
+  outline-offset: 3px;
+}
+a, button, input, select, textarea {
+  transition-timing-function: cubic-bezier(.2,.8,.2,1);
+}
+button:disabled {
+  cursor: not-allowed;
+}
+img {
+  display: block;
+}
+.room-card, .exp-card, .booking-widget {
+  transform: translateZ(0);
+}
+@media (max-width: 639px) {
+  .float-wa {
+    width: 52px;
+    height: 52px;
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+/* Phase 3 — conversion & content polish */
+.prose-measure { max-width: 68ch; }
+button, a { touch-action: manipulation; }
+.field::placeholder { color: rgba(27,27,22,.38); }
+.booking-widget input[type="date"] { color-scheme: dark; }
+@media (max-width: 767px) {
+  .eyebrow { letter-spacing: .22em; }
+}
