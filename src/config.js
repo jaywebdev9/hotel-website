@@ -7,6 +7,12 @@ export const siteConfig = {
   email: '', // Add the lodge email before publishing.
   airport: 'Songwe Airport',
   city: 'Mbeya city',
+  images: {
+    hero: 'https://images.pexels.com/photos/19010031/pexels-photo-19010031.jpeg?auto=compress&cs=tinysrgb&w=2000',
+    about: 'https://images.pexels.com/photos/14184934/pexels-photo-14184934.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    terrace: 'https://images.pexels.com/photos/5192360/pexels-photo-5192360.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    coffee: 'https://images.pexels.com/photos/30717831/pexels-photo-30717831.jpeg?auto=compress&cs=tinysrgb&w=1600',
+  },
   social: {
     facebook: '',
     instagram: '',
@@ -32,7 +38,7 @@ export const rooms = [
     beds: '1 King bed',
     guests: 2,
     desc: 'A private terrace, warm natural materials and a quiet highland setting.',
-    img: '/images/room-terrace.svg',
+    img: siteConfig.images.terrace,
     amenities: ['Private terrace', 'King bed', 'Wi-Fi'],
   },
   {
@@ -43,7 +49,7 @@ export const rooms = [
     beds: '1 King bed + sofa',
     guests: 3,
     desc: 'A generous suite designed for longer stays, with space to slow down and take in the landscape.',
-    img: '/images/room-suite.svg',
+    img: siteConfig.images.about,
     amenities: ['Highland views', 'Soaking tub', 'King bed'],
   },
   {
@@ -54,7 +60,7 @@ export const rooms = [
     beds: '2 beds',
     guests: 4,
     desc: 'A spacious option for families or small groups, opening onto a private terrace.',
-    img: '/images/room-family.svg',
+    img: siteConfig.images.hero,
     amenities: ['2-room layout', 'Private terrace', 'Up to 4 guests'],
   },
   {
@@ -65,7 +71,7 @@ export const rooms = [
     beds: '1 Queen bed',
     guests: 2,
     desc: 'A compact, characterful room for couples or solo travellers looking for a peaceful base.',
-    img: '/images/room-loft.svg',
+    img: siteConfig.images.terrace,
     amenities: ['Loft layout', 'Queen bed', 'Wi-Fi'],
   },
 ]
