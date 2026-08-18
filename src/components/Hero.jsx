@@ -34,80 +34,79 @@ const stats = [
 export default function Hero({ onBook }) {
   const { t } = useLanguage()
   return (
-    <section id="top" className="scroll-mt-24 relative min-h-[100svh] flex flex-col justify-end overflow-hidden">
-      {/* img + object-cover always fills the viewport edge-to-edge on any screen size —
-          this replaces a CSS background-image, which was tiling on tall mobile screens */}
+    <section id="top" className="scroll-mt-24 relative min-h-[700px] lg:min-h-[760px] flex flex-col justify-end overflow-hidden">
       <div className="absolute inset-0">
         <img
           src="/images/hero-highlands.webp"
-          alt="Mbeya highlands at dawn"
+          alt="Loleza Ridge lodge overlooking the Mbeya highlands"
           className="hero-img absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest-950/45 via-forest-950/40 to-forest-950/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-950/92 via-forest-950/62 to-forest-950/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-950/88 via-transparent to-forest-950/30" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-20 md:pb-28 w-full">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-gold-400 font-mono text-xs md:text-sm tracking-[0.35em] uppercase mb-5"
-        >
-          {t('Southern Highlands · Mbeya, Tanzania')}
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display text-parchment text-5xl sm:text-6xl md:text-8xl leading-[0.95] max-w-4xl"
-        >
-          {t('Where the highlands')}
-          <br /> {t('breathe slowly.')}
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="text-parchment/80 max-w-xl mt-7 text-base md:text-lg leading-relaxed"
-        >
-          A ten-room lodge folded into Mount Loleza's coffee terraces, overlooking the Mbeya
-          escarpment. Wood fires, hand-picked arabica, and views that don't ask for a filter.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="flex flex-wrap gap-4 mt-9"
-        >
-          <a
-            href="#rooms"
-            onClick={(e)=>{e.preventDefault();scrollToSection('rooms')}}
-            className="bg-clay hover:bg-clay-600 text-parchment px-7 py-3.5 rounded-full text-sm font-semibold transition-colors"
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-28 md:pt-32 pb-10 md:pb-14 w-full">
+        <div className="max-w-2xl lg:max-w-[620px]">
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.08 }}
+            className="text-gold-400 font-mono text-[10px] md:text-xs tracking-[0.32em] uppercase mb-4"
           >
-            {t('View Rooms & Rates')}
-          </a>
-          <button
-            onClick={onBook}
-            className="border border-parchment/40 hover:border-gold-400 hover:text-gold-400 text-parchment px-7 py-3.5 rounded-full text-sm font-semibold transition-colors"
+            {t('Southern Highlands · Mbeya, Tanzania')}
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, delay: 0.16 }}
+            className="font-display text-parchment text-5xl sm:text-6xl md:text-7xl lg:text-[5.8rem] leading-[0.94] tracking-[-0.025em] max-w-3xl"
           >
-            {t('Book Direct — No Commission')}
-          </button>
-        </motion.div>
+            {t('Where the highlands')}
+            <br /> {t('breathe slowly.')}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.28 }}
+            className="text-parchment/82 max-w-xl mt-6 text-sm md:text-base lg:text-lg leading-relaxed"
+          >
+            A ten-room lodge folded into Mount Loleza's coffee terraces, overlooking the Mbeya
+            escarpment. Wood fires, hand-picked arabica, and views that don't ask for a filter.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.4 }}
+            className="flex flex-wrap gap-3 md:gap-4 mt-7"
+          >
+            <a
+              href="#rooms"
+              onClick={(e) => { e.preventDefault(); scrollToSection('rooms') }}
+              className="bg-clay hover:bg-clay-600 text-parchment px-6 md:px-7 py-3.5 rounded-full text-sm font-semibold transition-all hover:-translate-y-0.5"
+            >
+              {t('View Rooms & Rates')}
+            </a>
+            <button
+              onClick={onBook}
+              className="border border-parchment/40 hover:border-gold-400 hover:text-gold-400 text-parchment px-6 md:px-7 py-3.5 rounded-full text-sm font-semibold transition-all hover:-translate-y-0.5"
+            >
+              {t('Book Direct — No Commission')}
+            </button>
+          </motion.div>
+        </div>
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.65 }}
-        className="relative z-10 border-t border-parchment/15 bg-forest-950/60 backdrop-blur-sm"
+        transition={{ duration: 0.7, delay: 0.55 }}
+        className="relative z-10 border-t border-parchment/15 bg-forest-950/72 backdrop-blur-md"
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 md:py-6 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-5">
           {stats.map((s) => (
             <div key={t(s.label)}>
-              <p className="font-display text-2xl md:text-3xl text-gold-400">
-                {s.value}{s.suffix}
-              </p>
-              <p className="text-parchment/60 text-xs uppercase tracking-widest mt-1">{t(s.label)}</p>
+              <p className="font-display text-2xl md:text-3xl text-gold-400">{s.value}{s.suffix}</p>
+              <p className="text-parchment/60 text-[10px] md:text-xs uppercase tracking-widest mt-1">{t(s.label)}</p>
             </div>
           ))}
         </div>

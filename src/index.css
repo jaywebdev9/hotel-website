@@ -214,3 +214,22 @@ html { scroll-padding-top: 92px; }
 [id] { scroll-margin-top: 92px; }
 nav a { overflow-wrap: normal; }
 .hero-img, .room-card img, .gal-item img { background: #24352a; }
+
+/* Hero responsive polish: the previous hero asset contained a baked-in booking
+   widget, so the clean lodge image is now used with controlled positioning. */
+.hero-img {
+  object-position: 68% center;
+  image-rendering: auto;
+  backface-visibility: hidden;
+  animation: kenburns 28s ease-in-out infinite alternate;
+}
+@keyframes kenburns {
+  0% { transform: scale(1.025); }
+  100% { transform: scale(1); }
+}
+@media (max-width: 767px) {
+  .hero-img { object-position: 72% center; }
+}
+@media (min-width: 768px) {
+  #top { min-height: 760px; }
+}
