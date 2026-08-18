@@ -4,13 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react'
 
 const images = [
-  { src:'/images/mbeya-landscape.webp', alt:'Mbeya highlands', label:'The Highlands', span:'row-span-2' },
-  { src:'/images/lodge-exterior.webp', alt:'Lodge exterior', label:'The Lodge' },
-  { src:'/images/room-luxury.webp', alt:'Luxury lodge room', label:'Interiors' },
-  { src:'/images/coffee-estate.webp', alt:'Coffee estate', label:'Coffee Country', span:'row-span-2' },
-  { src:'/images/dining-view.webp', alt:'Dining with a view', label:'Dining', span:'col-span-2' },
-  { src:'/images/pool-view.webp', alt:'Mountain lodge pool', label:'Slow Afternoons' },
-  { src:'/images/breakfast.webp', alt:'Breakfast with a view', label:'Breakfast' },
+  { src:'/images/gallery-lodge.webp', alt:'Loleza Ridge lodge in the highlands', label:'The Lodge', span:'row-span-2' },
+  { src:'/images/gallery-room.webp', alt:'Warm lodge bedroom interior', label:'Interiors' },
+  { src:'/images/gallery-dining.webp', alt:'Lodge dining terrace', label:'Dining' },
+  { src:'/images/gallery-cuisine.webp', alt:'Locally inspired lodge cuisine', label:'Local Flavours', span:'row-span-2' },
+  { src:'/images/gallery-view.webp', alt:'Highland landscape and lodge view', label:'Highland Views', span:'col-span-2' },
+  { src:'/images/gallery-sunset.webp', alt:'Sunset over the Southern Highlands', label:'Sunset' },
 ]
 export default function Gallery(){
   const { t } = useLanguage()

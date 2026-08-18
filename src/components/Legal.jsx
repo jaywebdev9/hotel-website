@@ -181,13 +181,51 @@ function LegalSection({ id, type }) {
   )
 }
 
-export default function Legal() {
+export function LegalPage({ type }) {
+  const { language, t } = useLanguage()
+  const data = content[language]?.[type] || content.en[type]
+  const links = [
+    ['terms', 'Terms & Conditions'],
+    ['privacy', 'Privacy Policy'],
+    ['cookies', 'Cookie Policy'],
+    ['accessibility', 'Accessibility'],
+  ]
+
   return (
-    <>
-      <LegalSection id="terms" type="terms" />
-      <LegalSection id="privacy" type="privacy" />
-      <LegalSection id="cookies" type="cookies" />
-      <LegalSection id="accessibility" type="accessibility" />
-    </>
+    <main className="min-h-screen bg-parchment text-ink">
+      <header className="bg-forest-950 text-parchment border-b border-parchment/10">
+        <div className="max-w-5xl mx-auto px-6 md:px-10 py-6 flex items-center justify-between gap-5">
+          <a href="#" className="font-display text-2xl">Loleza <span className="text-gold-400">Ridge</span></a>
+          <a href="#" className="rounded-full border border-parchment/25 px-5 py-2.5 text-sm hover:border-gold-400 hover:text-gold-400 transition">← {t('Back to home')}</a>
+        </div>
+      </header>
+      <section className="py-16 md:py-24">
+        <div className="max-w-5xl mx-auto px-6 md:px-10">
+          <p className="eyebrow text-clay">{data.eyebrow}</p>
+          <h1 className="font-display text-4xl md:text-6xl text-forest-950">{data.title}</h1>
+          <p className="prose-measure mt-5 text-ink/65 leading-8">{data.intro}</p>
+          <div className="mt-10 flex flex-wrap gap-2 border-y border-ink/10 py-4">
+            {links.map(([id, label]) => (
+              <a key={id} href={`#/${id}`} className={`rounded-full px-4 py-2 text-xs uppercase tracking-wider transition ${id === type ? 'bg-forest-950 text-gold-400' : 'border border-ink/10 text-ink/60 hover:border-clay hover:text-ink'}`}>
+                {t(label)}
+              </a>
+            ))}
+          </div>
+          <div className="mt-10 grid md:grid-cols-2 gap-5">
+            {data.sections.map(([title, body]) => (
+              <article key={title} className="rounded-2xl border border-ink/10 bg-white/45 p-6 md:p-7">
+                <h2 className="font-display text-xl text-forest-950">{title}</h2>
+                <p className="mt-3 text-sm leading-7 text-ink/65">{body}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-12 pt-6 border-t border-ink/10 text-xs text-ink/45">{t('Last updated: August 2026')}</p>
+        </div>
+      </section>
+    </main>
   )
+}
+
+export default function Legal() {
+  return null
 }

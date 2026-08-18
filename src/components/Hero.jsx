@@ -1,4 +1,4 @@
-import { motion, useInView, useMotionValue, animate, useScroll, useTransform } from 'framer-motion'
+import { motion, useInView, useMotionValue, animate } from 'framer-motion'
 import { useLanguage } from '../i18n'
 import { scrollToSection } from '../utils/navigation'
 import { useEffect, useRef } from 'react'
@@ -33,18 +33,14 @@ const stats = [
 
 export default function Hero({ onBook }) {
   const { t } = useLanguage()
-  const { scrollYProgress } = useScroll()
-  const imageY = useTransform(scrollYProgress, [0, 0.28], ['0%', '16%'])
-  const imageScale = useTransform(scrollYProgress, [0, 0.28], [1.06, 1.16])
   return (
     <section id="top" className="scroll-mt-24 relative min-h-[100svh] flex flex-col justify-end overflow-hidden">
       {/* img + object-cover always fills the viewport edge-to-edge on any screen size —
           this replaces a CSS background-image, which was tiling on tall mobile screens */}
       <div className="absolute inset-0">
         <img
-          src="/images/mbeya-landscape.webp"
+          src="/images/hero-highlands.webp"
           alt="Mbeya highlands at dawn"
-          style={{ y: imageY, scale: imageScale }}
           className="hero-img absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-forest-950/45 via-forest-950/40 to-forest-950/90" />

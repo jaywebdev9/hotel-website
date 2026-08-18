@@ -45,14 +45,14 @@ export default function About() {
           className="grid grid-cols-2 gap-4"
         >
           <img
-            src="/images/lodge-exterior.webp"
+            src="/images/lodge-view.webp"
             className="rounded-2xl w-full h-64 object-cover mt-10"
-            alt="Highland terrace"
+            alt="Loleza Ridge lodge overlooking the highlands"
           />
           <img
-            src="/images/coffee-estate.webp"
+            src="/images/exp-coffee.webp"
             className="rounded-2xl w-full h-64 object-cover"
-            alt="Coffee estate"
+            alt="Coffee experience in the highlands"
           />
         </motion.div>
       </div>
