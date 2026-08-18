@@ -75,3 +75,17 @@ The primary navigation now includes an explicit **Rooms** link (`#rooms`) instea
 - All website imagery is bundled locally under `public/images/` so Cloudflare deployment does not depend on external Unsplash URLs.
 - Demo phone/WhatsApp: `+255689995937`. Replace it in `src/config.js` for a real client.
 - Navbar includes desktop language switching and a Location link.
+
+
+## Client customization contract
+
+The template keeps client-editable business settings in `src/config.js`. Update `siteConfig`, `rooms`, `amenities`, `offers`, `faqs`, and `testimonials` there before a client launch. Components should not need to be rewritten for normal content changes.
+
+For production deployment, set `SITE_URL` to the client's final HTTPS domain. The build script will generate `public/sitemap.xml` for that domain.
+
+## Pre-launch QA
+
+- `npm run build`
+- `npm run preview`
+- Test navigation, booking, WhatsApp, map, social links, legal pages, language switching, gallery, mobile layouts and keyboard navigation.
+- Run the final site through Lighthouse on mobile and desktop.

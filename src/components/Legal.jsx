@@ -1,4 +1,5 @@
 import { useLanguage } from '../i18n'
+import { siteConfig } from '../config'
 
 const content = {
   sw: {
@@ -195,7 +196,7 @@ export function LegalPage({ type }) {
     <main className="min-h-screen bg-parchment text-ink">
       <header className="bg-forest-950 text-parchment border-b border-parchment/10">
         <div className="max-w-5xl mx-auto px-6 md:px-10 py-6 flex items-center justify-between gap-5">
-          <a href="#" className="font-display text-2xl">Loleza <span className="text-gold-400">Ridge</span></a>
+          <a href="#" className="font-display text-2xl">{siteConfig.name.split(' ')[0]} <span className="text-gold-400">{siteConfig.name.split(' ').slice(1).join(' ')}</span></a>
           <a href="#" className="rounded-full border border-parchment/25 px-5 py-2.5 text-sm hover:border-gold-400 hover:text-gold-400 transition">← {t('Back to home')}</a>
         </div>
       </header>

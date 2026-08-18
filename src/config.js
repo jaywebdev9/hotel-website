@@ -1,6 +1,14 @@
 export const siteConfig = {
   name: 'Loleza Ridge Lodge',
+  // Change these two values for each client. Components consume them instead of hard-coded URLs.
+  siteUrl: '',
+  mapUrl: 'https://www.google.com/maps/search/?api=1&query=Mbeya%2C%20Tanzania',
   tagline: 'A slower stay in Mbeya’s Southern Highlands.',
+  seo: {
+    sw: { title: 'Loleza Ridge Lodge | Malazi Mbeya, Tanzania', description: 'Gundua Loleza Ridge Lodge huko Mbeya, Tanzania. Angalia malazi, uzoefu wa eneo, ofa na kuweka nafasi moja kwa moja kupitia WhatsApp.' },
+    en: { title: 'Loleza Ridge Lodge | Accommodation in Mbeya, Tanzania', description: 'Discover Loleza Ridge Lodge in Mbeya, Tanzania. Explore accommodation, local experiences, offers and direct WhatsApp booking.' },
+    fr: { title: 'Loleza Ridge Lodge | Hébergement à Mbeya, Tanzanie', description: 'Découvrez Loleza Ridge Lodge à Mbeya, en Tanzanie. Explorez les chambres, expériences locales, offres et réservation directe via WhatsApp.' },
+  },
   location: 'Mbeya, Tanzania',
   phone: '+255689995937', // DEMO contact number — replace for a real client.
   whatsapp: '255689995937', // DEMO WhatsApp — replace for a real client.
@@ -12,8 +20,12 @@ export const siteConfig = {
     instagram: '',
     tripadvisor: '',
     booking: '',
+    youtube: '',
   },
   // Keep these editable until verified against the real property.
+  // Optional brand assets/settings that can be changed per client without touching components.
+  logo: '/images/favicon.svg',
+  ogImage: '/images/og-image.png',
   verified: {
     address: false,
     roomRates: true,

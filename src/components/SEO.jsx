@@ -5,12 +5,8 @@ import { useLanguage } from '../i18n'
 export default function SEO() {
   const { language } = useLanguage()
   useEffect(() => {
-    const origin = window.location.origin
-    const meta = {
-      sw: { title: 'Loleza Ridge Lodge | Malazi Mbeya, Tanzania', description: 'Gundua Loleza Ridge Lodge huko Mbeya, Tanzania. Angalia malazi, uzoefu wa eneo, ofa na kuweka nafasi moja kwa moja kupitia WhatsApp.' },
-      en: { title: 'Loleza Ridge Lodge | Accommodation in Mbeya, Tanzania', description: 'Discover Loleza Ridge Lodge in Mbeya, Tanzania. Explore accommodation, local experiences, offers and direct WhatsApp booking.' },
-      fr: { title: 'Loleza Ridge Lodge | Hébergement à Mbeya, Tanzanie', description: 'Découvrez Loleza Ridge Lodge à Mbeya, en Tanzanie. Explorez les chambres, expériences locales, offres et réservation directe via WhatsApp.' },
-    }[language] || { title: 'Loleza Ridge Lodge | Accommodation in Mbeya, Tanzania', description: 'Discover Loleza Ridge Lodge in Mbeya, Tanzania. Explore accommodation, local experiences, offers and direct WhatsApp booking.' }
+    const origin = (siteConfig.siteUrl || window.location.origin).replace(/\/$/, '')
+    const meta = siteConfig.seo?.[language] || siteConfig.seo?.en || { title: siteConfig.name, description: siteConfig.tagline }
     const title = meta.title
     const description = meta.description
     document.title = title
@@ -31,7 +27,7 @@ export default function SEO() {
     upsert('meta[property="og:title"]', { property: 'og:title', content: title })
     upsert('meta[property="og:description"]', { property: 'og:description', content: description })
     upsert('meta[property="og:url"]', { property: 'og:url', content: origin })
-    upsert('meta[property="og:image"]', { property: 'og:image', content: origin + '/images/og-image.png' })
+    upsert('meta[property="og:image"]', { property: 'og:image', content: new URL(siteConfig.ogImage || '/images/og-image.png', origin).href })
     upsert('meta[name="twitter:card"]', { name: 'twitter:card', content: 'summary_large_image' })
 
     let canonical = document.head.querySelector('link[rel="canonical"]')

@@ -11,14 +11,14 @@ const socialItems = [
 
 export default function Footer() {
   const { t } = useLanguage()
-  const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Mbeya%2C%20Tanzania'
+  const mapUrl = siteConfig.mapUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.location || siteConfig.city || '')}`
 
   return <>
     <footer id="contact" className="scroll-mt-24 bg-[#211a13] text-[#f8f3e8] py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           <div className="lg:col-span-1">
-            <p className="font-display text-2xl">Loleza <span className="text-[#dabb55]">Ridge</span></p>
+            <p className="font-display text-2xl">{siteConfig.name.split(' ')[0]} <span className="text-[#dabb55]">{siteConfig.name.split(' ').slice(1).join(' ')}</span></p>
             <p className="text-[#f8f3e8]/55 text-sm leading-relaxed mt-4 max-w-xs">
               {t('A quiet lodge above the Mbeya escarpment, surrounded by coffee terraces and Southern Highlands skies.')}
             </p>
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col lg:flex-row justify-between gap-5 pt-6 text-xs text-[#f8f3e8]/35">
-          <span>{t('© 2026 Loleza Ridge Lodge. All rights reserved.')}</span>
+          <span>© 2026 {siteConfig.name}. {t('All rights reserved.')}</span>
           <nav aria-label={t('Legal')} className="flex flex-wrap gap-x-4 gap-y-2">
             <a href="#/terms" className="hover:text-[#dabb55]">{t('Terms & Conditions')}</a>
             <a href="#/privacy" className="hover:text-[#dabb55]">{t('Privacy Policy')}</a>

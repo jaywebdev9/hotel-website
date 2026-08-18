@@ -32,11 +32,11 @@ export default function Navbar({ onBook }) {
     <nav className={`fixed top-0 inset-x-0 z-[80] transition-all duration-500 ${scrolled ? 'bg-[#fbf8f1]/95 text-ink shadow-[0_10px_40px_rgba(38,29,20,.10)] backdrop-blur-xl border-b border-[#261d14]/10' : 'bg-gradient-to-b from-[#11100d]/70 to-transparent text-white'}`}>
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="h-[82px] flex items-center gap-5">
-          <a href="#top" onClick={(e) => go('top', e)} className="shrink-0 flex items-center gap-3" aria-label={t('Loleza Ridge home')}>
+          <a href="#top" onClick={(e) => go('top', e)} className="shrink-0 flex items-center gap-3" aria-label={siteConfig.name}>
             <span className={`w-11 h-11 rounded-full flex items-center justify-center border transition-colors ${scrolled ? 'border-[#b68b35] text-[#b68b35] bg-white/70' : 'border-white/55 text-[#e0b84f] bg-black/15'}`}>
               <Mountain className="w-5 h-5" strokeWidth={1.5} />
             </span>
-            <span className="font-display text-xl tracking-tight whitespace-nowrap">Loleza <span className="text-[#d3aa42]">Ridge</span></span>
+            <span className="font-display text-xl tracking-tight whitespace-nowrap">{siteConfig.name.split(' ')[0]} <span className="text-[#d3aa42]">{siteConfig.name.split(' ').slice(1).join(' ')}</span></span>
           </a>
 
           <div className="hidden lg:flex flex-1 items-center justify-center gap-x-6 xl:gap-x-8 text-[11px] uppercase tracking-[.11em]">
