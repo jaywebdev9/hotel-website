@@ -31,12 +31,12 @@ export default function Navbar({ onBook }) {
   return (
     <nav className={`fixed top-0 inset-x-0 z-[80] transition-all duration-500 ${scrolled ? 'bg-[#fbf8f1]/95 text-ink shadow-[0_10px_40px_rgba(38,29,20,.10)] backdrop-blur-xl border-b border-[#261d14]/10' : 'bg-gradient-to-b from-[#11100d]/70 to-transparent text-white'}`}>
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10">
-        <div className="h-[82px] flex items-center gap-5">
-          <a href="#top" onClick={(e) => go('top', e)} className="shrink-0 flex items-center gap-3" aria-label={siteConfig.name}>
+        <div className="h-[82px] min-w-0 flex items-center gap-3 sm:gap-5">
+          <a href="#top" onClick={(e) => go('top', e)} className="min-w-0 shrink flex items-center gap-2.5 sm:gap-3" aria-label={siteConfig.name}>
             <span className={`w-11 h-11 rounded-full flex items-center justify-center border transition-colors ${scrolled ? 'border-[#b68b35] text-[#b68b35] bg-white/70' : 'border-white/55 text-[#e0b84f] bg-black/15'}`}>
               <Mountain className="w-5 h-5" strokeWidth={1.5} />
             </span>
-            <span className="font-display text-xl tracking-tight whitespace-nowrap">{siteConfig.name.split(' ')[0]} <span className="text-[#d3aa42]">{siteConfig.name.split(' ').slice(1).join(' ')}</span></span>
+            <span className="min-w-0 truncate font-display text-[clamp(1rem,5vw,1.25rem)] tracking-tight whitespace-nowrap">{siteConfig.name.split(' ')[0]} <span className="text-[#d3aa42]">{siteConfig.name.split(' ').slice(1).join(' ')}</span></span>
           </a>
 
           <div className="hidden lg:flex flex-1 items-center justify-center gap-x-6 xl:gap-x-8 text-[11px] uppercase tracking-[.11em]">
@@ -52,8 +52,8 @@ export default function Navbar({ onBook }) {
               ))}
             </div>
             {siteConfig.phone && <a href={`tel:${siteConfig.phone}`} className={`hidden xl:flex w-10 h-10 rounded-full border items-center justify-center transition ${scrolled ? 'border-ink/10 text-ink/65 hover:border-[#c89b34] hover:text-[#9a7124]' : 'border-white/20 text-white/80 hover:border-white/60'}`} aria-label={t('Call lodge')}><Phone className="w-4" /></a>}
-            <button onClick={onBook} className="rounded-full bg-[#c99b31] hover:bg-[#ddb75c] text-[#21180f] px-5 sm:px-6 py-3 text-xs sm:text-sm font-semibold shadow-[0_10px_30px_rgba(201,155,49,.28)] transition-all hover:-translate-y-0.5 whitespace-nowrap">{t('Book Now')}</button>
-            <button onClick={() => setOpen(v => !v)} className={`lg:hidden w-11 h-11 flex items-center justify-center rounded-full transition ${scrolled ? 'text-ink hover:bg-black/5' : 'text-white hover:bg-white/10'}`} aria-label={t('Menu')} aria-expanded={open}>
+            <button onClick={onBook} className="hidden md:inline-flex shrink-0 rounded-full bg-[#c99b31] hover:bg-[#ddb75c] text-[#21180f] px-5 sm:px-6 py-3 text-xs sm:text-sm font-semibold shadow-[0_10px_30px_rgba(201,155,49,.28)] transition-all hover:-translate-y-0.5 whitespace-nowrap">{t('Book Now')}</button>
+            <button onClick={() => setOpen(v => !v)} className={`lg:hidden shrink-0 w-11 h-11 flex items-center justify-center rounded-full transition ${scrolled ? 'text-ink hover:bg-black/5' : 'text-white hover:bg-white/10'}`} aria-label={t('Menu')} aria-expanded={open}>
               {open ? <X className="w-6 h-6" strokeWidth={1.7} /> : <Menu className="w-6 h-6" strokeWidth={1.7} />}
             </button>
           </div>
@@ -61,7 +61,7 @@ export default function Navbar({ onBook }) {
 
         <AnimatePresence>
           {open && (
-            <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="lg:hidden absolute left-4 right-4 top-[74px] rounded-[1.5rem] overflow-hidden bg-[#fbf8f1] text-ink shadow-[0_24px_70px_rgba(20,15,10,.25)] border border-ink/10">
+            <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="lg:hidden absolute left-3 right-3 sm:left-4 sm:right-4 top-[74px] rounded-[1.5rem] overflow-hidden bg-[#fbf8f1] text-ink shadow-[0_24px_70px_rgba(20,15,10,.25)] border border-ink/10">
               <div className="p-3 grid grid-cols-2 gap-1">
                 {links.map(([id, label]) => <a key={id} href={`#${id}`} onClick={(e) => go(id, e)} className="py-3.5 px-4 rounded-xl text-sm hover:bg-[#f0e5cf] transition-colors">{t(label)}</a>)}
                 <div className="col-span-2 mt-2 pt-3 border-t border-ink/10 flex items-center justify-between px-3">

@@ -479,3 +479,49 @@ body { background:#f8f5ee; color:#241c15; }
   .hero-img { object-position:center center; }
   .hero-copy h1 { font-size:clamp(4.5rem,6vw,6.2rem); }
 }
+
+
+/* Mobile viewport stability: prevent the navigation/content from creating a
+   wider-than-viewport layout that can make mobile browsers render the page
+   as if it were zoomed out or horizontally shifted. */
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+}
+html {
+  overflow-x: clip;
+}
+body {
+  overflow-x: clip;
+}
+
+@media (max-width: 767px) {
+  .hero-section,
+  .hero-section > *,
+  section,
+  main,
+  footer {
+    max-width: 100%;
+  }
+
+  .hero-copy,
+  .hero-copy h1,
+  .hero-description {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero-copy h1 {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
+/* Small phones: the primary Book button lives inside the hamburger menu.
+   Keeping both controls in the top bar at the same time makes the logo +
+   controls wider than a 320–390px viewport. */
+@media (max-width: 767px) {
+  nav > div > div:first-child {
+    gap: .5rem;
+  }
+}
