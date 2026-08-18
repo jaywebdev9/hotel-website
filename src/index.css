@@ -233,3 +233,25 @@ nav a { overflow-wrap: normal; }
 @media (min-width: 768px) {
   #top { min-height: 760px; }
 }
+
+/* Premium responsive treatment matching the approved mobile reference */
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(7, 17, 12, .90) 0%, rgba(7, 17, 12, .68) 38%, rgba(7, 17, 12, .18) 72%, rgba(7, 17, 12, .05) 100%);
+}
+.hero-description { color: #fff !important; }
+.hero-img { object-position: 68% center; filter: saturate(1.06) contrast(1.04); }
+
+@media (max-width: 767px) {
+  .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(7,17,12,.20) 0%, rgba(7,17,12,.40) 38%, rgba(7,17,12,.84) 73%, rgba(7,17,12,.97) 100%),
+      linear-gradient(90deg, rgba(7,17,12,.52) 0%, rgba(7,17,12,.10) 100%);
+  }
+  .hero-img { object-position: 68% center; }
+  .hero-description { max-width: 34rem; font-size: .94rem; line-height: 1.65; }
+}
+
+@media (min-width: 768px) {
+  .hero-overlay { background-position: center; }
+}

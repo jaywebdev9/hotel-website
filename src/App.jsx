@@ -34,5 +34,5 @@ export default function App() {
    return <LanguageProvider><SEO/><LegalPage type={route}/></LanguageProvider>
  }
 
- return <LanguageProvider><SEO/><div className="bg-parchment text-ink font-body"><Navbar onBook={()=>setBooking({})}/><Hero onBook={()=>setBooking({})}/><Booking onBook={()=>setBooking({})}/><TerraceDivider fill="#142019"/><About/><TerraceDivider fill="#F0EAD6" flip/><Rooms onBook={setBooking}/><Amenities/><Experiences/><Offers onBook={()=>setBooking({})}/><Gallery/><TerraceDivider fill="#142019"/><Testimonials/><FAQ/><Location/><Footer/>{booking&&<BookingModal initialBooking={booking} onClose={()=>setBooking(null)}/>}<BackToTop/></div></LanguageProvider>
+ return <LanguageProvider><SEO/><div className="bg-parchment text-ink font-body"><Navbar onBook={()=>setBooking({})}/><Hero onBook={()=>setBooking({})}/><TerraceDivider fill="#142019"/><About/><TerraceDivider fill="#F0EAD6" flip/><Rooms onBook={setBooking}/><Amenities/><Experiences/><Offers onBook={()=>setBooking({})}/><Gallery/><TerraceDivider fill="#142019"/><Testimonials/><FAQ/><Location/><Footer/>{booking&&<BookingModal initialBooking={booking} onClose={()=>setBooking(null)}/>}<BackToTop/></div></LanguageProvider>
 }
