@@ -406,3 +406,76 @@ body { background:#f8f5ee; color:#241c15; }
     padding: 0 !important;
   }
 }
+
+/* HERO V15 — mobile-first slideshow using the two supplied lodge photos.
+   No Ken Burns / scale transform: the source photographs stay at 1:1 scale. */
+.hero-section { isolation:isolate; }
+.hero-media { overflow:hidden; }
+.hero-img {
+  object-fit:cover;
+  object-position:center center;
+  transform:none !important;
+  animation:none !important;
+  filter:saturate(.98) contrast(1.02);
+  will-change:opacity;
+}
+.hero-overlay {
+  background:linear-gradient(90deg,rgba(6,12,8,.72) 0%,rgba(6,12,8,.38) 45%,rgba(6,12,8,.10) 100%);
+}
+.hero-bottom-fade {
+  height:58%;
+  background:linear-gradient(180deg,rgba(8,9,7,0) 0%,rgba(8,9,7,.12) 28%,rgba(8,9,7,.82) 78%,#080907 100%);
+}
+.hero-copy h1 {
+  font-size:clamp(3rem,13vw,6.2rem);
+  line-height:.9;
+  letter-spacing:-.035em;
+}
+.hero-eyebrow {
+  font-size:10px;
+  line-height:1.5;
+  letter-spacing:.28em;
+  margin-bottom:1rem;
+}
+.hero-description {
+  font-size:15px;
+  line-height:1.68;
+  text-shadow:0 2px 14px rgba(0,0,0,.72);
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+@media (max-width:767px) {
+  .hero-section .min-h-\[760px\] { min-height:760px; }
+  .hero-media { height:100%; }
+  .hero-img { object-position:center top; }
+  .hero-overlay {
+    background:linear-gradient(180deg,rgba(6,12,8,.18) 0%,rgba(6,12,8,.08) 24%,rgba(6,12,8,.28) 46%,rgba(6,12,8,.72) 70%,rgba(6,12,8,.98) 100%);
+  }
+  .hero-bottom-fade { height:62%; }
+  .hero-copy { width:100%; max-width:100%; padding-bottom:10px; }
+  .hero-eyebrow {
+    max-width:100%;
+    font-size:9px;
+    letter-spacing:.22em;
+    margin-bottom:1.15rem;
+    white-space:normal;
+  }
+  .hero-copy h1 {
+    font-size:clamp(3rem,13.6vw,4.1rem);
+    line-height:.9;
+  }
+  .hero-description {
+    max-width:35rem;
+    margin-top:1.35rem;
+    font-size:.94rem;
+    line-height:1.62;
+  }
+  .hero-copy .mt-8 { margin-top:1.45rem; }
+  .hero-copy a, .hero-copy button { min-height:52px; }
+}
+
+@media (min-width:768px) {
+  .hero-img { object-position:center center; }
+  .hero-copy h1 { font-size:clamp(4.5rem,6vw,6.2rem); }
+}
