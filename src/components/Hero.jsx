@@ -7,9 +7,9 @@ import { scrollToSection } from '../utils/navigation'
 export default function Hero({ onBook }) {
   const { t } = useLanguage()
   const slides = [
-    { src: '/images/hero-highlands.webp', mobile: '/images/mobile-hero-highlands.webp', alt: 'Loleza Ridge Lodge overlooking the Southern Highlands' },
-    { src: '/images/lodge-view.webp', mobile: '/images/mobile-lodge-view.webp', alt: 'Loleza Ridge Lodge terrace and highland view' },
-    { src: '/images/gallery-sunset.webp', mobile: '/images/mobile-gallery-sunset.webp', alt: 'Sunset over the Southern Highlands near Loleza Ridge' },
+    { src: '/images/hero-highlands.webp', alt: 'Loleza Ridge Lodge overlooking the Southern Highlands' },
+    { src: '/images/lodge-view.webp', alt: 'Loleza Ridge Lodge terrace and highland view' },
+    { src: '/images/gallery-sunset.webp', alt: 'Sunset over the Southern Highlands near Loleza Ridge' },
   ]
   const [activeSlide, setActiveSlide] = useState(0)
 
@@ -54,14 +54,12 @@ export default function Hero({ onBook }) {
       <div className="md:hidden relative min-h-[100svh] overflow-hidden bg-[#111812]">
         <div className="absolute inset-0" aria-label="Loleza Ridge Lodge photography slideshow">
           {slides.map((slide, index) => (
-            <picture key={slide.src}>
-              <source media="(max-width: 767px)" srcSet={slide.mobile} />
-              <img
-                src={slide.src}
-                alt={slide.alt}
-                className={`hero-img absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out ${index === activeSlide ? 'opacity-100' : 'opacity-0'}`}
-              />
-            </picture>
+            <img
+              key={slide.src}
+              src={slide.src}
+              alt={slide.alt}
+              className={`hero-img absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out ${index === activeSlide ? 'opacity-100' : 'opacity-0'}`}
+            />
           ))}
           <div className="hero-overlay absolute inset-0" />
           <div className="absolute inset-x-0 bottom-0 h-[62%] bg-gradient-to-t from-[#080906]/90 via-[#080906]/45 to-transparent" />

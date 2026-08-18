@@ -353,6 +353,33 @@ body { background:#f8f5ee; color:#241c15; }
 }
 
 
+/* V14: mobile uses the original clean single-scene photographs.
+   The previous mobile assets were composite/stacked exports, which made the
+   same lodge scene appear multiple times inside one hero. */
+@media (max-width: 767px) {
+  #top .hero-img {
+    object-fit: cover !important;
+    object-position: 67% center !important;
+    width: 100% !important;
+    height: 100% !important;
+    filter: saturate(1.02) contrast(1.03) !important;
+  }
+
+  #top .relative.z-10 {
+    min-height: 100svh;
+    align-items: flex-end;
+  }
+
+  #top .hero-description {
+    max-width: 36rem;
+    margin-top: 1.35rem;
+  }
+
+  #top .hero-description + div {
+    margin-top: 1.5rem;
+  }
+}
+
 /* V13: mobile hero is one full-screen photographic canvas.
    The image fills the entire hero instead of sitting in a separate 16:9 block. */
 @media (max-width: 767px) {
