@@ -32,7 +32,7 @@ export default function Navbar({ onBook }) {
     <nav className={`fixed top-0 inset-x-0 z-[80] transition-all duration-500 ${scrolled ? 'bg-[#fbf8f1]/95 text-ink shadow-[0_10px_40px_rgba(38,29,20,.10)] backdrop-blur-xl border-b border-[#261d14]/10' : 'bg-gradient-to-b from-[#11100d]/70 to-transparent text-white'}`}>
       <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="h-[82px] flex items-center gap-5">
-          <a href="#top" onClick={(e) => go('top', e)} className="shrink-0 flex items-center gap-3" aria-label="Loleza Ridge home">
+          <a href="#top" onClick={(e) => go('top', e)} className="shrink-0 flex items-center gap-3" aria-label={t('Loleza Ridge home')}>
             <span className={`w-11 h-11 rounded-full flex items-center justify-center border transition-colors ${scrolled ? 'border-[#b68b35] text-[#b68b35] bg-white/70' : 'border-white/55 text-[#e0b84f] bg-black/15'}`}>
               <Mountain className="w-5 h-5" strokeWidth={1.5} />
             </span>
@@ -51,7 +51,7 @@ export default function Navbar({ onBook }) {
                 <button key={lang.code} type="button" onClick={() => setLanguage(lang.code)} className={`px-2.5 py-1.5 rounded-full text-[10px] font-semibold transition ${language === lang.code ? 'bg-[#c89b34] text-[#21180f]' : scrolled ? 'text-ink/55' : 'text-white/60'}`}>{lang.short}</button>
               ))}
             </div>
-            {siteConfig.phone && <a href={`tel:${siteConfig.phone}`} className={`hidden xl:flex w-10 h-10 rounded-full border items-center justify-center transition ${scrolled ? 'border-ink/10 text-ink/65 hover:border-[#c89b34] hover:text-[#9a7124]' : 'border-white/20 text-white/80 hover:border-white/60'}`} aria-label="Call lodge"><Phone className="w-4" /></a>}
+            {siteConfig.phone && <a href={`tel:${siteConfig.phone}`} className={`hidden xl:flex w-10 h-10 rounded-full border items-center justify-center transition ${scrolled ? 'border-ink/10 text-ink/65 hover:border-[#c89b34] hover:text-[#9a7124]' : 'border-white/20 text-white/80 hover:border-white/60'}`} aria-label={t('Call lodge')}><Phone className="w-4" /></a>}
             <button onClick={onBook} className="rounded-full bg-[#c99b31] hover:bg-[#ddb75c] text-[#21180f] px-5 sm:px-6 py-3 text-xs sm:text-sm font-semibold shadow-[0_10px_30px_rgba(201,155,49,.28)] transition-all hover:-translate-y-0.5 whitespace-nowrap">{t('Book Now')}</button>
             <button onClick={() => setOpen(v => !v)} className={`lg:hidden w-11 h-11 flex items-center justify-center rounded-full transition ${scrolled ? 'text-ink hover:bg-black/5' : 'text-white hover:bg-white/10'}`} aria-label={t('Menu')} aria-expanded={open}>
               {open ? <X className="w-6 h-6" strokeWidth={1.7} /> : <Menu className="w-6 h-6" strokeWidth={1.7} />}

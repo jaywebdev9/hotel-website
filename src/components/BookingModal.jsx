@@ -77,8 +77,8 @@ export default function BookingModal({ initialBooking = null, onClose }) {
           <div className="border-t border-ink/10 pt-7"><p className="font-display text-xl mb-4">{t('Guest details')}</p><div className="grid sm:grid-cols-2 gap-4">
             <input required name="name" value={form.name} onChange={update} placeholder={t('Name')} className="field" aria-label={t('Name')} />
             <input required name="phone" value={form.phone} onChange={update} placeholder={t('Phone')} className="field" aria-label={t('Phone')} />
-            <input type="email" name="email" value={form.email} onChange={update} placeholder={`${t('Email')} (optional)`} className="field sm:col-span-2" aria-label={t('Email')} />
-            <textarea name="requests" value={form.requests} onChange={update} placeholder={`${t('Special requests')} (optional)`} rows="4" className="field sm:col-span-2 resize-none" aria-label={t('Special requests')} />
+            <input type="email" name="email" value={form.email} onChange={update} placeholder={`${t('Email')} (${t('optional')})`} className="field sm:col-span-2" aria-label={t('Email')} />
+            <textarea name="requests" value={form.requests} onChange={update} placeholder={`${t('Special requests')} (${t('optional')})`} rows="4" className="field sm:col-span-2 resize-none" aria-label={t('Special requests')} />
           </div></div>
           {error && <div role="alert" className="flex items-start gap-2 rounded-xl border border-clay/20 bg-clay/5 px-4 py-3 text-sm text-clay"><AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />{error}</div>}
           <label className="flex items-start gap-3 text-xs leading-5 text-ink/60 cursor-pointer">

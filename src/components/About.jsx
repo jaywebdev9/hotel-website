@@ -25,8 +25,8 @@ export default function About() {
       <button onClick={()=>scrollToSection('experiences')} className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#b18431]/40 px-5 py-3 text-sm text-[#8e681f] hover:bg-[#f0e5cf] transition">{t('Discover the experience')} <ArrowRight className="w-4"/></button>
     </motion.div>
     <motion.div initial={{opacity:0,x:25}} whileInView={{opacity:1,x:0}} viewport={{once:true,amount:.25}} transition={{duration:.7,delay:.1}} className="relative min-h-[500px]">
-      <img src="/images/lodge-view.webp" alt="Loleza Ridge lodge and highland view" className="feature-image absolute left-0 top-0 w-[76%] h-[430px] md:h-[520px] rounded-[1.6rem] object-cover"/>
-      <img src="/images/room-suite.webp" alt="Loleza Ridge guest room" className="feature-image absolute right-0 bottom-0 w-[48%] h-[220px] md:h-[270px] rounded-[1.4rem] object-cover border-[10px] border-[#f8f5ee]"/>
+      <img src="/images/lodge-view.webp" alt={t('Loleza Ridge lodge and highland view')} className="feature-image absolute left-0 top-0 w-[76%] h-[430px] md:h-[520px] rounded-[1.6rem] object-cover"/>
+      <img src="/images/room-suite.webp" alt={t('Loleza Ridge guest room')} className="feature-image absolute right-0 bottom-0 w-[48%] h-[220px] md:h-[270px] rounded-[1.4rem] object-cover border-[10px] border-[#f8f5ee]"/>
     </motion.div>
    </div>
   </div>

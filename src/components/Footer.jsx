@@ -23,7 +23,7 @@ export default function Footer() {
               {t('A quiet lodge above the Mbeya escarpment, surrounded by coffee terraces and Southern Highlands skies.')}
             </p>
             <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-6 rounded-full border border-[#dabb55]/30 bg-[#dabb55]/10 px-4 py-2.5 text-sm text-[#dabb55] hover:bg-[#dabb55] hover:text-[#211a13] transition">
-              <MessageCircle className="w-4 h-4" /> WhatsApp concierge
+              <MessageCircle className="w-4 h-4" /> {t('WhatsApp concierge')}
             </a>
           </div>
 
@@ -44,7 +44,7 @@ export default function Footer() {
               <a href={mapUrl} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-[#dabb55] transition"><MapPin className="w-4 h-4 shrink-0" />{siteConfig.location}</a>
             </div>
             <a href={mapUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-6 text-xs uppercase tracking-[.16em] text-[#dabb55] hover:text-[#f0d77c] transition">
-              <Map className="w-4 h-4" /> Get directions
+              <Map className="w-4 h-4" /> {t('Get directions')}
             </a>
           </div>
 
@@ -54,7 +54,7 @@ export default function Footer() {
               {socialItems.map(({key,label,icon:Icon,fallback}) => {
                 const href = siteConfig.social?.[key] || fallback
                 const isConfigured = Boolean(siteConfig.social?.[key])
-                return <a key={key} href={href} target="_blank" rel="noreferrer" className="social" aria-label={label} title={isConfigured ? label : `${label} — profile URL to be configured`}>
+                return <a key={key} href={href} target="_blank" rel="noreferrer" className="social" aria-label={label} title={isConfigured ? label : `${label} — ${t('profile URL to be configured')}`}>
                   <Icon className="w-[17px] h-[17px]" />
                 </a>
               })}
@@ -66,7 +66,7 @@ export default function Footer() {
 
         <div className="flex flex-col lg:flex-row justify-between gap-5 pt-6 text-xs text-[#f8f3e8]/35">
           <span>{t('© 2026 Loleza Ridge Lodge. All rights reserved.')}</span>
-          <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-2">
+          <nav aria-label={t('Legal')} className="flex flex-wrap gap-x-4 gap-y-2">
             <a href="#/terms" className="hover:text-[#dabb55]">{t('Terms & Conditions')}</a>
             <a href="#/privacy" className="hover:text-[#dabb55]">{t('Privacy Policy')}</a>
             <a href="#/cookies" className="hover:text-[#dabb55]">{t('Cookie Policy')}</a>
@@ -76,6 +76,6 @@ export default function Footer() {
       </div>
     </footer>
 
-    {siteConfig.whatsapp && <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noreferrer" className="float-wa fixed bottom-5 right-5 z-40 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl" aria-label="Chat on WhatsApp"><MessageCircle className="w-6 h-6" /></a>}
+    {siteConfig.whatsapp && <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noreferrer" className="float-wa fixed bottom-5 right-5 z-40 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl" aria-label={t('Chat on WhatsApp')}><MessageCircle className="w-6 h-6" /></a>}
   </>
 }

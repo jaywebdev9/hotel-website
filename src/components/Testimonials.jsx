@@ -21,7 +21,7 @@ export default function Testimonials() {
           {testimonials.map((item, index) => (
             <article key={`${item.name}-${index}`} className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-7">
               <Quote className="w-7 h-7 text-[#d8b24f] mb-6" strokeWidth={1.5} />
-              <div className="flex gap-1 mb-5" aria-label={`${item.rating} out of 5 stars`}>
+              <div className="flex gap-1 mb-5" aria-label={`${item.rating} ${t('out of 5 stars')}`}>
                 {Array.from({ length: item.rating || 5 }).map((_, i) => <Star key={i} className="w-4 h-4 fill-gold text-gold" />)}
               </div>
               <p className="font-display text-xl leading-relaxed">“{t(item.quote)}”</p>

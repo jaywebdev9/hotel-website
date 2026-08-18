@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import { ArrowUp } from 'lucide-react'
 import { scrollToSection } from '../utils/navigation'
+import { useLanguage } from '../i18n'
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 480)
@@ -17,7 +19,7 @@ export default function BackToTop() {
   return (
     <button
       onClick={() => scrollToSection('top')}
-      aria-label="Back to top"
+      aria-label={t('Back to top')}
       className="fixed bottom-5 left-5 z-40 w-12 h-12 rounded-full bg-forest-950 text-gold-400 border border-gold-400/40 flex items-center justify-center shadow-xl hover:bg-forest-900 hover:-translate-y-0.5 transition-all"
     >
       <ArrowUp className="w-5 h-5" />

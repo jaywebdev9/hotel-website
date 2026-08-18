@@ -1,11 +1,18 @@
 import { useEffect } from 'react'
 import { siteConfig } from '../config'
+import { useLanguage } from '../i18n'
 
 export default function SEO() {
+  const { language } = useLanguage()
   useEffect(() => {
     const origin = window.location.origin
-    const title = 'Loleza Ridge Lodge | Accommodation in Mbeya, Tanzania'
-    const description = 'Discover Loleza Ridge Lodge in Mbeya, Tanzania. Explore accommodation, local experiences, offers and direct WhatsApp booking.'
+    const meta = {
+      sw: { title: 'Loleza Ridge Lodge | Malazi Mbeya, Tanzania', description: 'Gundua Loleza Ridge Lodge huko Mbeya, Tanzania. Angalia malazi, uzoefu wa eneo, ofa na kuweka nafasi moja kwa moja kupitia WhatsApp.' },
+      en: { title: 'Loleza Ridge Lodge | Accommodation in Mbeya, Tanzania', description: 'Discover Loleza Ridge Lodge in Mbeya, Tanzania. Explore accommodation, local experiences, offers and direct WhatsApp booking.' },
+      fr: { title: 'Loleza Ridge Lodge | Hébergement à Mbeya, Tanzanie', description: 'Découvrez Loleza Ridge Lodge à Mbeya, en Tanzanie. Explorez les chambres, expériences locales, offres et réservation directe via WhatsApp.' },
+    }[language] || { title: 'Loleza Ridge Lodge | Accommodation in Mbeya, Tanzania', description: 'Discover Loleza Ridge Lodge in Mbeya, Tanzania. Explore accommodation, local experiences, offers and direct WhatsApp booking.' }
+    const title = meta.title
+    const description = meta.description
     document.title = title
 
     const upsert = (selector, attrs) => {
@@ -61,7 +68,7 @@ export default function SEO() {
       document.head.appendChild(script)
     }
     script.textContent = JSON.stringify(clean)
-  }, [])
+  }, [language])
 
   return null
 }
