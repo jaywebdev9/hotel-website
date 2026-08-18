@@ -19,7 +19,7 @@ export default function Hero({ onBook }) {
           <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .75, delay: .08 }} className="font-display text-white text-[3.2rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[6.2rem] leading-[.9] tracking-[-.035em] drop-shadow-[0_4px_20px_rgba(0,0,0,.55)]">
             {t('Find your perfect stay,')}<br /><span className="italic font-normal">{t('in the highlands.')}</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, delay: .18 }} className="mt-7 max-w-[590px] text-white/92 text-[15px] md:text-[17px] leading-[1.7] drop-shadow-[0_3px_12px_rgba(0,0,0,.8)]">
+          <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, delay: .18 }} className="hero-description mt-7 max-w-[600px] text-white text-[15px] md:text-[17px] leading-[1.7] font-medium drop-shadow-[0_3px_12px_rgba(0,0,0,.95)] bg-[#080b09]/55 backdrop-blur-[3px] border border-white/15 rounded-2xl px-4 py-3.5 md:px-5 md:py-4 shadow-[0_14px_40px_rgba(0,0,0,.22)]">
             A ten-room lodge folded into Mount Loleza's coffee terraces, overlooking the Mbeya escarpment. Warm rooms, direct hospitality and quiet mornings above the city.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, delay: .28 }} className="flex flex-wrap gap-3 mt-8">

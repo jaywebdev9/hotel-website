@@ -284,3 +284,20 @@ body { background:#f8f5ee; color:#241c15; }
   .hero-img { object-position:58% center; }
   .booking-field { min-height:56px; }
 }
+
+
+/* Final conversion polish: keep hero body copy readable over photography. */
+.hero-description {
+  color: #fff !important;
+  text-shadow: 0 2px 14px rgba(0,0,0,.72);
+  -webkit-text-stroke: .05px rgba(255,255,255,.15);
+}
+@media (max-width: 767px) {
+  .hero-description {
+    background: rgba(7, 10, 8, .62);
+    border-color: rgba(255,255,255,.16);
+    box-shadow: 0 18px 44px rgba(0,0,0,.24);
+  }
+}
+.social { color: rgba(248,243,232,.72); }
+.social:focus-visible { background:#c9a227; color:#142019; }
