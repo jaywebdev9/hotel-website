@@ -326,3 +326,21 @@ body { background:#f8f5ee; color:#241c15; }
     text-shadow: 0 2px 16px rgba(0,0,0,.95), 0 1px 4px rgba(0,0,0,.95);
   }
 }
+
+
+/* V11: preserve the natural hero framing on mobile and desktop.
+   No Ken Burns scaling — the slideshow should never zoom/crop further just because
+   the viewport is smaller. */
+.hero-img {
+  animation: none !important;
+  transform: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  will-change: opacity;
+}
+@media (max-width: 767px) {
+  .hero-img {
+    object-position: center center !important;
+    transform: none !important;
+  }
+}

@@ -29,7 +29,6 @@ export default function Hero({ onBook }) {
             src={slide.src}
             alt={slide.alt}
             className={`hero-img absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out ${index === activeSlide ? 'opacity-100' : 'opacity-0'}`}
-            style={{ objectPosition: index === 1 ? 'center 55%' : 'center center' }}
           />
         ))}
         <div className="hero-overlay absolute inset-0" />
