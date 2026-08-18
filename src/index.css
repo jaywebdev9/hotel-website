@@ -255,3 +255,32 @@ nav a { overflow-wrap: normal; }
 @media (min-width: 768px) {
   .hero-overlay { background-position: center; }
 }
+
+/* --- Reference-inspired hotel redesign: warm editorial luxury --- */
+body { background:#f8f5ee; color:#241c15; }
+.bg-parchment { background:#f8f5ee !important; }
+.hero-img { animation: kenburns 30s ease-in-out infinite alternate; object-position:center center; filter:saturate(.92) contrast(1.06); }
+@keyframes kenburns { 0%{transform:scale(1.015)} 100%{transform:scale(1.06)} }
+.booking-field { min-height:58px; border:1px solid rgba(36,28,21,.10); background:#fffdfa; border-radius:.9rem; padding:.65rem .9rem; display:flex; flex-direction:column; justify-content:center; transition:.25s; }
+.booking-field:hover,.booking-field:focus-within { border-color:rgba(201,155,49,.55); box-shadow:0 8px 24px rgba(36,28,21,.06); }
+.booking-field span { display:flex; align-items:center; gap:.4rem; font-size:.58rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(36,28,21,.45); }
+.booking-field span svg { width:13px;height:13px; }
+.booking-field strong,.booking-field input,.booking-field select { margin-top:.3rem; width:100%; border:0; outline:0; background:transparent; color:#2b2118; font:600 .84rem Manrope,sans-serif; }
+.booking-field input,.booking-field select { font-weight:600; }
+.booking-field input::-webkit-calendar-picker-indicator { opacity:.45; }
+
+.editorial-section { background:#fbf8f1; }
+.service-card { border:1px solid rgba(36,28,21,.09); background:rgba(255,255,255,.72); transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+.service-card:hover { transform:translateY(-7px); box-shadow:0 24px 55px rgba(43,31,20,.09); border-color:rgba(201,155,49,.35); }
+.gold-icon { color:#b48732; background:#f4ead3; }
+.feature-image { box-shadow:0 22px 60px rgba(37,28,18,.14); }
+.room-card { box-shadow:0 18px 45px rgba(35,27,19,.08); }
+.room-card .room-image { height:280px; }
+@media (min-width:768px){ .room-card .room-image { height:310px; } }
+.offer-card { background:#efe6d5; border:1px solid rgba(36,28,21,.08); }
+.quote-card { background:#fffdfa; border:1px solid rgba(36,28,21,.08); }
+
+@media (max-width:767px){
+  .hero-img { object-position:58% center; }
+  .booking-field { min-height:56px; }
+}
