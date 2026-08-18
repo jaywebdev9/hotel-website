@@ -5,7 +5,7 @@ const content = {
     terms: {
       eyebrow: 'Kisheria',
       title: 'Masharti na Vigezo',
-      intro: 'Masharti haya ni msingi wa matumizi ya tovuti na maombi ya nafasi. Yanafaa kubadilishwa na sera rasmi za the lodge kabla ya kuchapishwa.',
+      intro: 'Masharti haya ni msingi wa matumizi ya tovuti na maombi ya nafasi. Yanafaa kubadilishwa na sera rasmi za Loleza Ridge Lodge kabla ya kuchapishwa.',
       sections: [
         ['Maombi ya nafasi', 'Kutuma fomu ya nafasi kupitia tovuti au WhatsApp ni ombi la nafasi, si uthibitisho wa mwisho wa reservation. Nafasi inakuwa imethibitishwa baada ya lodge kuthibitisha upatikanaji na masharti ya malipo.'],
         ['Bei na malipo', 'Bei zinazoonyeshwa kwenye tovuti ni makadirio kulingana na taarifa iliyowekwa na lodge. Kodi, ada, deposit au masharti mengine yanapaswa kuthibitishwa moja kwa moja kabla ya malipo.'],
@@ -14,7 +14,7 @@ const content = {
         ['Mabadiliko ya booking', 'Mabadiliko ya tarehe, idadi ya wageni au aina ya chumba yanategemea availability na yanaweza kubadilisha bei.'],
         ['Sheria za wageni', 'Wageni wanawajibika kuheshimu property, wageni wengine, wafanyakazi na sheria za eneo. Uharibifu wa mali unaweza kutozwa kulingana na sera ya lodge.'],
         ['Taarifa za tovuti', 'Lodge inaweza kusahihisha bei, picha, amenities, offers au taarifa nyingine wakati wowote. Taarifa ya mwisho inayothibitishwa na lodge ndiyo inayotumika kwenye booking.'],
-        ['Mawasiliano', 'Kwa maswali kuhusu booking, malipo au sera, wasiliana moja kwa moja na the lodge kupitia mawasiliano yaliyo kwenye tovuti.'],
+        ['Mawasiliano', 'Kwa maswali kuhusu booking, malipo au sera, wasiliana moja kwa moja na Loleza Ridge Lodge kupitia mawasiliano yaliyo kwenye tovuti.'],
       ],
     },
     privacy: {
@@ -57,7 +57,7 @@ const content = {
     terms: {
       eyebrow: 'Legal',
       title: 'Terms & Conditions',
-      intro: 'These terms provide a starting framework for website use and booking requests. They should be reviewed and replaced with the lodge’s official policies before publication.',
+      intro: 'These terms provide a starting framework for website use and booking requests. They should be reviewed and replaced with Loleza Ridge Lodge’s official policies before publication.',
       sections: [
         ['Booking requests', 'Submitting a booking form through the website or WhatsApp is a request, not an instant reservation. A stay is confirmed only after the lodge confirms availability and payment terms.'],
         ['Rates and payment', 'Displayed rates are estimates based on information supplied by the lodge. Taxes, deposits, fees and other payment terms should be confirmed before payment.'],
@@ -66,7 +66,7 @@ const content = {
         ['Booking changes', 'Changes to dates, guest numbers or room types depend on availability and may change the price.'],
         ['Guest conduct', 'Guests are responsible for respecting the property, other guests, staff and applicable local rules. Property damage may be charged under the lodge’s official policy.'],
         ['Website information', 'The lodge may update rates, images, amenities, offers or other information. The final information confirmed by the lodge applies to a booking.'],
-        ['Contact', 'For booking, payment or policy questions, contact the lodge directly using the contact details published on the website.'],
+        ['Contact', 'For booking, payment or policy questions, contact Loleza Ridge Lodge directly using the contact details published on the website.'],
       ],
     },
     privacy: {
@@ -118,7 +118,7 @@ const content = {
         ['Modifications', 'Les changements de dates, de nombre de voyageurs ou de type de chambre dépendent des disponibilités et peuvent modifier le prix.'],
         ['Comportement des voyageurs', 'Les voyageurs doivent respecter le logement, les autres clients, le personnel et les règles locales applicables. Les dommages peuvent être facturés selon la politique officielle du lodge.'],
         ['Informations du site', 'Le lodge peut modifier les tarifs, images, équipements, offres ou autres informations. Les informations finales confirmées par le lodge s’appliquent à la réservation.'],
-        ['Contact', 'Pour toute question concernant une réservation, un paiement ou une politique, contactez directement the lodge avec les coordonnées publiées sur le site.'],
+        ['Contact', 'Pour toute question concernant une réservation, un paiement ou une politique, contactez directement Loleza Ridge Lodge avec les coordonnées publiées sur le site.'],
       ],
     },
     privacy: {

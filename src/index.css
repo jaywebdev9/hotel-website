@@ -200,3 +200,10 @@ button, a { touch-action: manipulation; }
 @media (max-width: 767px) {
   .eyebrow { letter-spacing: .22em; }
 }
+
+
+/* Navigation and anchor reliability */
+html { scroll-padding-top: 92px; }
+[id] { scroll-margin-top: 92px; }
+nav a { overflow-wrap: normal; }
+.hero-img, .room-card img, .gal-item img { background: #24352a; }

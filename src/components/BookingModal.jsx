@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { X, CalendarDays, Users, MessageCircle, ArrowLeft, ShieldCheck, AlertCircle } from 'lucide-react'
 import { rooms, siteConfig } from '../config'
 import { useLanguage } from '../i18n'
+import { scrollToSection } from '../utils/navigation'
 
 const today = () => new Date().toISOString().split('T')[0]
 
@@ -83,8 +84,8 @@ export default function BookingModal({ initialBooking = null, onClose }) {
           <label className="flex items-start gap-3 text-xs leading-5 text-ink/60 cursor-pointer">
             <input type="checkbox" checked={agreed} onChange={e => { setAgreed(e.target.checked); setError('') }} className="mt-1 h-4 w-4 accent-[#c9a227]" required />
             <span>{t('I agree to the Terms & Conditions and Privacy Policy.')} <span className="inline-flex gap-2 ml-1">
-              <a href="#terms" onClick={() => onClose()} className="text-forest-800 underline hover:text-gold-700">{t('Terms & Conditions')}</a>
-              <a href="#privacy" onClick={() => onClose()} className="text-forest-800 underline hover:text-gold-700">{t('Privacy Policy')}</a>
+              <a href="#terms" onClick={(e) => { e.preventDefault(); onClose(); setTimeout(() => scrollToSection('terms'), 50) }} className="text-forest-800 underline hover:text-gold-700">{t('Terms & Conditions')}</a>
+              <a href="#privacy" onClick={(e) => { e.preventDefault(); onClose(); setTimeout(() => scrollToSection('privacy'), 50) }} className="text-forest-800 underline hover:text-gold-700">{t('Privacy Policy')}</a>
             </span></span>
           </label>
         </div>

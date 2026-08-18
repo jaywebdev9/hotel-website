@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useLanguage } from '../i18n'
-import { bookingSection } from '../config'
 import { CalendarDays, Users, ArrowRight } from 'lucide-react'
 export default function Booking({ onBook }) {
   const { t } = useLanguage()
@@ -9,7 +8,7 @@ export default function Booking({ onBook }) {
     <div className="max-w-7xl mx-auto px-5 md:px-10">
       <div className="booking-widget rounded-[1.5rem] border border-parchment/10 bg-forest-950/90 p-4 md:p-5 shadow-[0_24px_70px_rgba(0,0,0,.28)]">
         <div className="flex flex-col lg:flex-row lg:items-center gap-5">
-          <div className="hidden lg:block pr-5 border-r border-parchment/10 min-w-[185px]"><p className="text-gold-400 font-mono text-[10px] uppercase tracking-[.25em]">{t(bookingSection.eyebrow)}</p><p className="font-display text-xl mt-1">{t(bookingSection.title)}</p></div>
+          <div className="hidden lg:block pr-5 border-r border-parchment/10 min-w-[185px]"><p className="text-gold-400 font-mono text-[10px] uppercase tracking-[.25em]">{t('Book direct')}</p><p className="font-display text-xl mt-1">{t('Find your stay')}</p></div>
           <div className="grid sm:grid-cols-3 gap-3 flex-1">
             <label className="widget-control"><span><CalendarDays/> {t('Check-in')}</span><input type="date" value={checkIn} onChange={e=>setCheckIn(e.target.value)} min={new Date().toISOString().split('T')[0]}/></label>
             <label className="widget-control"><span><CalendarDays/> {t('Check-out')}</span><input type="date" value={checkOut} onChange={e=>setCheckOut(e.target.value)} min={checkIn || new Date().toISOString().split('T')[0]}/></label>

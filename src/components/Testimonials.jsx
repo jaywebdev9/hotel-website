@@ -1,58 +1,38 @@
-import { MessageCircle, Star } from 'lucide-react'
+import { Star, Quote } from 'lucide-react'
 import { testimonials } from '../config'
 import { useLanguage } from '../i18n'
+import { scrollToSection } from '../utils/navigation'
 
 export default function Testimonials() {
   const { t } = useLanguage()
-
-  if (!testimonials.length) {
-    return (
-      <section className="bg-forest-950 text-parchment py-20 md:py-24">
-        <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
-          <p className="text-gold-400 font-mono text-xs tracking-[0.3em] uppercase mb-5">{t('Guest Reviews')}</p>
-          <h2 className="font-display text-3xl md:text-5xl leading-tight">{t('Let your guests tell the story.')}</h2>
-          <p className="text-parchment/55 max-w-xl mx-auto mt-5 leading-relaxed">
-            {t('Add verified reviews from Google, TripAdvisor, Booking.com or direct guest feedback here. Keeping reviews genuine makes the booking experience more trustworthy.')}
-          </p>
-          <a href="#contact" className="inline-flex items-center gap-2 mt-8 rounded-full border border-gold-400/40 px-6 py-3 text-sm text-gold-400 hover:bg-gold-400 hover:text-forest-950 transition">
-            <MessageCircle className="w-4 h-4" /> {t('Contact the lodge')}
-          </a>
-        </div>
-      </section>
-    )
-  }
+  if (!testimonials.length) return null
 
   return (
-    <section id="testimonials" className="scroll-mt-24 bg-forest-950 text-parchment py-20 md:py-24">
+    <section id="testimonials" className="scroll-mt-24 bg-forest-950 text-parchment py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <p className="text-gold-400 font-mono text-xs tracking-[0.3em] uppercase mb-5">{t('Guest Reviews')}</p>
-          <h2 className="font-display text-3xl md:text-5xl leading-tight">{t('What guests say.')}</h2>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <p className="eyebrow text-gold-400">{t('Guest Reviews')}</p>
+            <h2 className="font-display text-4xl md:text-5xl leading-tight">{t('Let your guests tell the story.')}</h2>
+          </div>
+          <p className="text-parchment/55 max-w-md leading-relaxed">{t('A small collection of demo reviews for presentation. Replace these with verified guest feedback before client launch.')}</p>
         </div>
-        <div className={`grid gap-6 ${testimonials.length === 1 ? 'max-w-2xl mx-auto' : testimonials.length === 2 ? 'md:grid-cols-2 max-w-5xl mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
-          {testimonials.map((review, i) => {
-            const quote = typeof review === 'string' ? review : review.quote || review.text || ''
-            const name = typeof review === 'string' ? '' : review.name || review.author || ''
-            const source = typeof review === 'string' ? '' : review.source || ''
-            const rating = typeof review === 'string' ? 5 : Number(review.rating || 5)
-
-            return (
-              <article key={`${name}-${i}`} className="rounded-[1.5rem] border border-parchment/10 bg-parchment/[0.04] p-7 md:p-8">
-                <div className="flex gap-1 text-gold-400 mb-5" aria-label={`${rating} out of 5 stars`}>
-                  {Array.from({ length: 5 }).map((_, star) => <Star key={star} className={`w-4 h-4 ${star < rating ? 'fill-current' : 'opacity-25'}`} />)}
-                </div>
-                <blockquote className="font-display text-xl md:text-2xl leading-relaxed">“{t(quote)}”</blockquote>
-                {(name || source) && (
-                  <footer className="mt-7 pt-5 border-t border-parchment/10 text-sm text-parchment/55">
-                    {name && <strong className="text-parchment/85 font-medium">{name}</strong>}
-                    {name && source && <span className="mx-2">·</span>}
-                    {source && <span>{source}</span>}
-                  </footer>
-                )}
-              </article>
-            )
-          })}
+        <div className="grid md:grid-cols-3 gap-5">
+          {testimonials.map((item, index) => (
+            <article key={`${item.name}-${index}`} className="rounded-[1.5rem] border border-parchment/10 bg-white/[0.035] p-7">
+              <Quote className="w-7 h-7 text-gold-400 mb-6" strokeWidth={1.5} />
+              <div className="flex gap-1 mb-5" aria-label={`${item.rating} out of 5 stars`}>
+                {Array.from({ length: item.rating || 5 }).map((_, i) => <Star key={i} className="w-4 h-4 fill-gold text-gold" />)}
+              </div>
+              <p className="font-display text-xl leading-relaxed">“{t(item.quote)}”</p>
+              <div className="mt-7 pt-5 border-t border-parchment/10">
+                <p className="font-semibold">{item.name}</p>
+                <p className="text-xs text-parchment/45 mt-1">{t(item.role)}</p>
+              </div>
+            </article>
+          ))}
         </div>
+        <button type="button" onClick={() => scrollToSection('contact')} className="mt-9 inline-flex rounded-full border border-gold-400/40 px-6 py-3 text-sm text-gold-400 hover:bg-gold-400 hover:text-forest-950 transition">{t('Contact the lodge')}</button>
       </div>
     </section>
   )

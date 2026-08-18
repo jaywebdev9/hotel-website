@@ -69,3 +69,9 @@ Edit translations in `src/i18n.jsx`.
 
 ## Navbar correction
 The primary navigation now includes an explicit **Rooms** link (`#rooms`) instead of the generic Accommodation label.
+
+
+## Demo update
+- All website imagery is bundled locally under `public/images/` so Cloudflare deployment does not depend on external Unsplash URLs.
+- Demo phone/WhatsApp: `+255689995937`. Replace it in `src/config.js` for a real client.
+- Navbar includes desktop language switching and a Location link.
