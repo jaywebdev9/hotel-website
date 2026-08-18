@@ -1,6 +1,5 @@
 import { motion, useInView, useMotionValue, animate } from 'framer-motion'
 import { useLanguage } from '../i18n'
-import { siteConfig } from '../config'
 import { scrollToSection } from '../utils/navigation'
 import { useEffect, useRef } from 'react'
 
@@ -40,9 +39,9 @@ export default function Hero({ onBook }) {
           this replaces a CSS background-image, which was tiling on tall mobile screens */}
       <div className="absolute inset-0">
         <img
-          src={siteConfig.images.hero}
+          src="/images/hero-highlands.svg"
           alt="Mbeya highlands at dawn"
-          onError={(e)=>{e.currentTarget.src='/images/hero-highlands.svg'}} className="hero-img absolute inset-0 w-full h-full object-cover"
+          className="hero-img absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-forest-950/45 via-forest-950/40 to-forest-950/90" />
       </div>

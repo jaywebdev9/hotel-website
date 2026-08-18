@@ -181,16 +181,13 @@ function LegalSection({ id, type }) {
   )
 }
 
-export function LegalPage({ type }) {
-  const valid = ['terms', 'privacy', 'cookies', 'accessibility']
-  const selected = valid.includes(type) ? type : 'terms'
-  return (
-    <main className="min-h-screen bg-parchment pt-28">
-      <LegalSection id={selected} type={selected} />
-    </main>
-  )
-}
-
 export default function Legal() {
-  return null
+  return (
+    <>
+      <LegalSection id="terms" type="terms" />
+      <LegalSection id="privacy" type="privacy" />
+      <LegalSection id="cookies" type="cookies" />
+      <LegalSection id="accessibility" type="accessibility" />
+    </>
+  )
 }

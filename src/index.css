@@ -52,6 +52,13 @@ body {
   backdrop-filter: blur(6px);
 }
 
+/* Mobile nav dropdown: fully opaque, plain CSS (not a Tailwind opacity
+   utility) so the panel is guaranteed readable the instant it opens,
+   with no dependency on backdrop-filter support or transition timing. */
+.nav-panel-solid {
+  background: #142019;
+}
+
 .room-card img {
   transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
