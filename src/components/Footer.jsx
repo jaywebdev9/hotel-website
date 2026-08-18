@@ -59,7 +59,7 @@ export default function Footer() {
                 </a>
               })}
             </div>
-            <p className="text-xs text-[#f8f3e8]/35 mt-4 leading-relaxed">Instagram · Facebook · YouTube<br/>Official profile links can be updated in <code className="text-[#dabb55]/70">src/config.js</code>.</p>
+
             {siteConfig.whatsapp && <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-5 text-sm text-[#dabb55] hover:text-[#f0d77c]"><MessageCircle className="w-4"/> {t('WhatsApp the lodge')}</a>}
           </div>
         </div>

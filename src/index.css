@@ -301,3 +301,28 @@ body { background:#f8f5ee; color:#241c15; }
 }
 .social { color: rgba(248,243,232,.72); }
 .social:focus-visible { background:#c9a227; color:#142019; }
+
+
+/* V10: clean hero photography + automatic slideshow */
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(8,10,8,.74) 0%, rgba(8,10,8,.43) 42%, rgba(8,10,8,.08) 78%, rgba(8,10,8,.02) 100%);
+}
+.hero-description {
+  color: #fff !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 !important;
+  text-shadow: 0 2px 18px rgba(0,0,0,.88), 0 1px 3px rgba(0,0,0,.9);
+}
+@media (max-width: 767px) {
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(8,10,8,.18) 0%, rgba(8,10,8,.28) 34%, rgba(8,10,8,.58) 72%, rgba(8,10,8,.82) 100%);
+  }
+  .hero-description {
+    color: #fff !important;
+    text-shadow: 0 2px 16px rgba(0,0,0,.95), 0 1px 4px rgba(0,0,0,.95);
+  }
+}
