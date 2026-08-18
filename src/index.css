@@ -344,3 +344,10 @@ body { background:#f8f5ee; color:#241c15; }
     transform: none !important;
   }
 }
+
+/* V12 mobile hero: do not crop a landscape photograph into a portrait box.
+   Mobile gets a true 16:9 photo stage so the full lodge photograph remains visible. */
+@media (max-width: 767px) {
+  .hero-img { animation:none !important; transform:none !important; object-fit:contain !important; object-position:center center !important; filter:saturate(.98) contrast(1.02) !important; }
+  .hero-description { background:transparent !important; padding:0 !important; border:0 !important; box-shadow:none !important; }
+}
