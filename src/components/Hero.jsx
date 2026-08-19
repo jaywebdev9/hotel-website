@@ -5,8 +5,8 @@ import { useLanguage } from '../i18n'
 import { scrollToSection } from '../utils/navigation'
 
 const slides = [
-  { src: '/images/hero-lobby.jpg', alt: 'Elegant Loleza Ridge Lodge lobby', position: 'center center' },
-  { src: '/images/hero-room.jpg', alt: 'Luxury Loleza Ridge Lodge room', position: 'center center' },
+  { src: '/images/hero-lobby.jpg', alt: 'Elegant Loleza Ridge Lodge lobby', position: 'center 35%' },
+  { src: '/images/hero-room.jpg', alt: 'Luxury Loleza Ridge Lodge room', position: 'center 30%' },
 ]
 
 export default function Hero({ onBook }) {
